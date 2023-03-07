@@ -7,6 +7,9 @@
 html {
   font-size: 16px;
 }
+body {
+  background-color: #f0eff4;
+}
 .header {
   background-color: #323150;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -86,6 +89,7 @@ html {
 
 .accomplishment {
   font-size: 0.8rem;
+  background-color: #f0eff4;
 }
 
 .a-values > p {
@@ -108,6 +112,107 @@ html {
 }
 
 /* SERVICES */
+
+.service-sectoins {
+  background-color: #f0eff4;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
 .box-service {
-  background-color: yellow;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2rem;
+  border-radius: 10px;
+  height: 12rem;
+  margin-bottom: 2rem;
+}
+
+.box-ui {
+  background-color: #6868dd;
+}
+.box-web {
+  background-color: #eecf48;
+}
+.box-photo {
+  background-color: #f6485c;
+}
+
+.box-service > p:first-child {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.box-service > p:last-child {
+  font-size: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.service-head {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.service-last {
+  font-size: 0.6rem;
+  text-align: center;
+}
+.service-last > a {
+  text-decoration: none;
+  color: #cab245;
+}
+
+/* EXPERIENCE */
+
+.experience-section {
+  background-color: #f0eff4;
+  margin-bottom: 5rem;
+}
+
+.ebox {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 7px;
+  margin-bottom: 2rem;
+}
+
+/* EXPERIENCE */
+
+.experience-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.education {
+  padding-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+.education > p {
+  margin: 0;
+  padding: 0;
+}
+.education > p:first-child {
+  font-size: 0.6rem;
+  font-weight: 200;
+  padding-bottom: 0.2rem;
+}
+
+.education > p:nth-child(2) {
+  font-weight: 900;
+  padding-bottom: 0.2rem;
+}
+
+.education > p:last-child {
+  font-size: 0.6rem;
+}
+
+/* WORK DONE */
+.boxw {
+  margin-bottom: 1rem;
+}
+
+.work-images {
+  border-radius: 50%;
 }
