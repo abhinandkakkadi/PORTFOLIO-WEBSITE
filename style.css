@@ -224,7 +224,7 @@ label {
 }
 
 .form-container {
-  background-color: #e5e6e8;
+  background-color: #e5e6e890;
   width: 60%;
   padding: 3rem;
   border-radius: 10px;
@@ -236,9 +236,33 @@ label {
 }
 
 .form-group {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .register {
   display: block;
+}
+
+.form-group > p:nth-child(3) {
+  font-size: 0.8rem;
+}
+
+.valid {
+  border: 5px solid green;
+}
+
+.invalid {
+  border: 5px solid red;
+}
+
+input.form-control:focus .valid {
+  box-shadow: none;
+  border-color: transparent;
+  border: 5px solid green;
+}
+
+input.form-control:focus .invalid {
+  box-shadow: none;
+  border-color: transparent;
+  border: 5px solid red;
 }
