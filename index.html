@@ -11,11 +11,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+
     <script
       src="https://kit.fontawesome.com/7b7dfdaf87.js"
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
     <title>Document</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script type="text/javascript">
+   (function(){
+      emailjs.init("YE7XDHrYqHXlSif0eW");
+   })();
+</script> -->
   </head>
   <body>
     <div class="header">
@@ -297,42 +312,63 @@
         </div>
         <div class="form-container">
 
-        
-        <form id="myForm">
+          <!-- action="https://formsubmit.co/879427095bd11a6d74d8f5f65ea4bc13" method="POST" -->
+        <form id="submit-form" >
           <div class="form-group">
             <label for="name">Name</label>
-            <input class="form-control" type="text"  name="name" id="name"  placeholder="Name">
+            <input class="form-control" type="text"  name="name" id="name"  placeholder="Name" required>
             <p>Name must only include characters</p>
      
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control" type="email"  name="email" id="email" placeholder="Email">
+            <input class="form-control" type="email"  name="email" id="email" placeholder="Email" required>
             <p>Emai must be of the standard form</p>
           </div>
 
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input class="form-control" type="text"  name="telephone" id="phone" placeholder="Phone Number">
+            <input class="form-control" type="text"  name="telephone" id="phone" placeholder="Phone Number" required>
             <p>Must have 10 digits</p>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control" type="password"  name="password" id="password" placeholder="Password">
+            <input class="form-control" type="password"  name="password" id="password" placeholder="Password" required>
             <p>must be of atleast 8 characters in length </p>
           </div>
           <div class="form-group">
             <label for="confirm-passwword">Confirm Password</label>
-            <input class="form-control" type="password"  name="confirmPassword" id="confirm-password" placeholder="Confirm Password">
+            <input class="form-control" type="password"  name="confirmPassword" id="confirm-password" placeholder="Confirm Password" required>
             <p></p>
           </div>
           <div class="form-group">
-            <button type="submit" id="submit" class=" register btn btn-success">Submit</button>
+            <button  type="submit" id="submit"  class=" register btn btn-success" >Submit</button>
           </div>
+         
         </form>
       </div>
       </div>
     </section>
+    <script>
+      $("#submit-form").submit((e)=>{
+          e.preventDefault()
+          $.ajax({
+              url:"https://script.google.com/macros/s/AKfycbxfM8UK4inxTxN3gTxlmUa6TA9Y6SlcEJFfUK0warO5e7Lds6JmPBdEt4X4Pc847Efm/exec",
+              data:$("#submit-form").serialize(),
+              method:"post",
+              success:function (response){
+                  alert("Form submitted successfully")
+                  window.location.reload()
+                  //window.location.href="https://google.com"
+              },
+              error:function (err){
+                  alert("Something Error")
+  
+              }
+          })
+      })
+  </script>
+   
 
 
     
@@ -346,6 +382,9 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    
     <script src="./script.js"></script>
   </body>
 </html>
