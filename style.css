@@ -53,7 +53,8 @@ body {
   font-weight: 200;
 }
 
-.social-icons {
+.social-icons,
+.social-icons:hover {
   color: white;
 }
 
@@ -69,6 +70,12 @@ body {
 .main-section-one {
   background-color: #f0eff4;
   font-size: 1rem;
+}
+
+.hire-me-b,
+.hire-me-b:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .about-me {
