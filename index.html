@@ -149,7 +149,7 @@
     <section class="accomplishment py-5">
       <div class="container">
         <div class="box-container row   ">
-
+          <p class="service-head">Accomplishment</p>
           <div class="col-md-3 col-sm-6 col-12 py-2">
             <div class="box d-flex ">
               
@@ -196,6 +196,11 @@
         </div>
       </div>
     </section>
+
+
+    <!-- PROGRAMMING LANGUAFES -->
+
+    
 
 
     <!-- SERVICES -->
@@ -266,7 +271,7 @@
               <div class="education">
                 <p>2016-2018</p>
                 <p>12th</p>
-                <p>Opted Science along with computer science from Kendriya Vidyalaya Keltron Nagar</p>
+                <p> computer science from Kendriya Vidyalaya Keltron Nagar</p>
               </div>
             </div>
             
@@ -286,7 +291,7 @@
               <div class="education">
                 <p>2016-2018</p>
                 <p>Photography</p>
-                <p>Freelance photography, specialized in conceptual photography, model shoot and night shoot. </p>
+                <p>Freelance photography, specialized in conceptual photography </p>
               </div>
             </div>
           </div>
@@ -316,31 +321,32 @@
         <form id="submit-form" >
           <div class="form-group">
             <label for="name">Name</label>
-            <input class="form-control" type="text"  name="name" id="name"  placeholder="Name" required>
+            <input class="form-control" type="text"  name="name" id="name"  placeholder="Name" >
             <p>Name must only include characters</p>
      
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control" type="email"  name="email" id="email" placeholder="Email" required>
+            <input class="form-control" type="email"  name="email" id="email" placeholder="Email" >
             <p>Emai must be of the standard form</p>
           </div>
 
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input class="form-control" type="text"  name="telephone" id="phone" placeholder="Phone Number" required>
+            <input class="form-control" type="text"  name="telephone" id="phone" placeholder="Phone Number" >
             <p>Must have 10 digits</p>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control" type="password"  name="password" id="password" placeholder="Password" required>
+            <input class="form-control" type="password"  name="password" id="password" placeholder="Password" >
             <p>must be of atleast 8 characters in length </p>
           </div>
           <div class="form-group">
             <label for="confirm-passwword">Confirm Password</label>
-            <input class="form-control" type="password"  name="confirmPassword" id="confirm-password" placeholder="Confirm Password" required>
-            <p></p>
+            <input class="form-control" type="password"  name="confirmPassword" id="confirm-password" placeholder="Confirm Password" >
+           
           </div>
+          <p class="fill-form"></p>
           <div class="form-group">
             <button  type="submit" id="submit"  class=" register btn btn-success" >Submit</button>
           </div>
@@ -352,20 +358,40 @@
     <script>
       $("#submit-form").submit((e)=>{
           e.preventDefault()
-          $.ajax({
+          const inputs = document.querySelectorAll("input");
+          var flag =0;
+          inputs.forEach((input) => {
+            if(input.value == "") 
+            { input.className = "form-control invalid"
+              flag = 1;
+            }
+          })
+
+          if(flag === 0) {
+            document.querySelector(".fill-form").className = "fill-form fill-green";
+            document.querySelector(".fill-form").textContent = "form submitted successfully";
+            $.ajax({
               url:"https://script.google.com/macros/s/AKfycbxfM8UK4inxTxN3gTxlmUa6TA9Y6SlcEJFfUK0warO5e7Lds6JmPBdEt4X4Pc847Efm/exec",
               data:$("#submit-form").serialize(),
               method:"post",
               success:function (response){
-                  alert("Form submitted successfully")
+                  
                   window.location.reload()
-                  //window.location.href="https://google.com"
+                  
               },
               error:function (err){
                   alert("Something Error")
   
               }
           })
+
+          }
+          else{
+            
+            document.querySelector(".fill-form").textContent = "Complete the form before submitting"
+
+          }
+         
       })
   </script>
    

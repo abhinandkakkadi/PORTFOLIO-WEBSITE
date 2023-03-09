@@ -27,7 +27,6 @@ inputs.forEach((input) => {
   input.addEventListener("keyup", (e) => {
     // console.log(e.target.attributes.name.value);
     if (e.target.attributes.name.value === "confirmPassword") {
-      console.log(100);
       if (e.target.value === password.value) {
         e.target.className = "form-control valid";
         password.className = "form-control valid";
@@ -42,41 +41,3 @@ inputs.forEach((input) => {
     }
   });
 });
-
-// SUBMISSION PART
-// function sendMail() {
-//   console.log(1000);
-// emailjs.send("service_gnfht1q", "template_qo5vzdg", {
-//   name_send: document.getElementById("name").value,
-//   phone_send: document.getElementById("phone").value,
-//   email_send: document.getElementById("email").value,
-// });
-//
-// }
-// SMTP JS
-
-// Password: "pxlgglialcrlltrk"
-// var submit = document.getElementById("submit");
-// submit.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   var nameSend = document.getElementById("name").value;
-//   var emailSend = document.getElementById("email").value;
-//   var phoneSend = document.getElementById("phone").value;
-//   var body =
-//     "name: " +
-//     nameSend +
-//     "<br/> email: " +
-//     emailSend +
-//     "<br/> phone " +
-//     phoneSend;
-
-//   Email.send({
-//     Host: "smtp.elasticemail.com",
-//     Username: "nanduttanvsabhi@gmail.com",
-//     Password: "553B6E3E8BDA288DC2C427BD81576DAF03F4",
-//     To: "nanduttanvsabhi@gmail.com",
-//     From: emailSend,
-//     Subject: "This is the subject",
-//     Body: body,
-//   }).then((message) => alert(message));
-// });
